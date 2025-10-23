@@ -1,55 +1,50 @@
-# Tavion Thomas-Dominguez – Personal Portfolio
+# Tavion Thomas-Dominguez
 
-Welcome to my personal website!
-This site was created to showcase my background, experience, and portfolio projects as a **Business student at San Diego State University** with interests in **consulting, finance, and entrepreneurship**.
+Hey 👋 I’m Tavion — a business student at **San Diego State University** who’s passionate about building, learning, and creating value through business and technology.
 
----
-
-## 🌐 Live Website
-
-Once published via GitHub Pages, you’ll be able to view it here:
-👉 **[https://tavionthomasdominguez.github.io](https://tavionthomasdominguez.github.io)**
+This site is my personal **portfolio** — built to share my background, goals, and the projects I’ve worked on as I keep growing in finance, consulting, and entrepreneurship.
 
 ---
 
-## 📂 About This Repository
+## 🌱 About Me
 
-This repository contains:
+I’m originally from **Sacramento, CA**, and I’ve always loved finding creative ways to solve problems — whether that meant selling candy in middle school or launching my own ventures later on.
 
-* **index.html** – the main webpage
-* **Thumbnail images** for portfolio previews
-* **README.md** – this documentation file
-* (Optional) CSS file for styling if added later
+Right now, I’m focused on:
 
----
-
-## 💼 Portfolio Includes
-
-* Financial Services Business Plan
-* Property Management Startup Plan
-* Property Partners Pitch Deck
-
-Each document is hosted on **Google Drive** and viewable by clicking the previews on the site.
+* Business strategy and consulting
+* Financial analysis and investing
+* Marketing and communication
+* Building brands and startups that help people
 
 ---
 
-## 🧰 Built With
+## 💼 Portfolio
 
-* HTML5
-* Inline CSS styling
-* Google Drive for document hosting
-* GitHub Pages for free website hosting
+The portfolio section on this site includes:
 
----
+* A **Financial Services Business Plan** I created
+* A **Property Management Startup Plan**
+* A **Pitch Deck** for my company, *Property Partners*
 
-## 📧 Contact
-
-* **Email:** [taviontd@gmail.com](mailto:taviontd@gmail.com)
-* **LinkedIn:** [linkedin.com/in/tavionthomasdominguez](https://www.linkedin.com/in/tavionthomasdominguez)
+All documents are viewable through Google Drive links on the site.
 
 ---
 
-### 💡 How to View or Contribute
+## 🎓 Education
 
-This repository is primarily for my personal portfolio, but feedback is always welcome.
-Feel free to fork the project or reach out with suggestions!
+* **American River College** — A.S. in Business Administration (High Honors)
+* **San Diego State University** — B.S. in Business Administration (in progress, 3.3 GPA)
+
+---
+
+## 📫 Connect
+
+* Email: [taviontd@gmail.com](mailto:taviontd@gmail.com)
+* LinkedIn: [linkedin.com/in/tavionthomasdominguez](https://www.linkedin.com/in/tavionthomasdominguez)
+* Portfolio Website: *this page*
+
+---
+
+Thanks for checking out my repo — I’m always open to connecting, collaborating, or learning something new. 🚀
+
