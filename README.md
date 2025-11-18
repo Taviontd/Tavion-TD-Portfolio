@@ -45,6 +45,5 @@ All documents are viewable through Google Drive links on the site.
 * Portfolio Website: *this page*
 
 ---
-
-Thanks for checking out my repo — I’m always open to connecting, collaborating, or learning something new. 🚀
+I’m always open to connecting, collaborating, or learning something new. 🚀
 
