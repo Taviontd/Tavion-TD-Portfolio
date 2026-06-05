@@ -1,108 +1,387 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tavion Thomas-Dominguez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16223a;
+    --ink-soft: #44506a;
+    --paper: #fbf9f4;
+    --paper-2: #f3eee3;
+    --copper: #b0703f;
+    --copper-deep: #8f5630;
+    --line: #e2dac9;
+    --card: #ffffff;
+    --shadow: 0 1px 2px rgba(22,34,58,.04), 0 12px 32px rgba(22,34,58,.07);
+  }
 
-<html>
-    <section>
-<h1>Tavion Thomas-Dominguez</h1>
-<h2>San Diego State University</h2>
-<p><b>Hi</b>, my name is <u>Tavion Thomas-Dominguez</u> and I am currently a fourth year student at <i>San Diego State University</i> majoring in business.</p>
-<p style=text-align: left;>I am from Sacramento, California.</p>
-<p style=text-align: right;>Some of my hobbies include reading, going on hikes, and enjoying time with friends.</p>
-<p style=text-align: center;>Goals of mine include becoming a consultant and  having a career in finance. I am interested in Tax, Wealth Management, Consulting, and Analyst careers.</p>
-</section>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-<section>
-<h3>Businesses I started in order:</h3>
-<ol>
-    <li>Selling candy in middle school</li>
-    <li>Cutting hair</li>
-    <li>Insurance business</li>
-    <li>Property Management startup</li>
-</ol>
+  html { scroll-behavior: smooth; }
 
-<h3>Some skills of mine are:</h3>
-<ul>
-    <li>Marketing</li>
-    <li>Investing & Financial Analysis </li>
-    <li>Sales</li>
-    <li>Business Strategy</li>
-    <li>Great Communication</li>
-    <li>Customer Service</li>
-    <li>Self-starter</li>
-</ul>
-</section>
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(176,112,63,.05), transparent 40%),
+      radial-gradient(circle at 90% 12%, rgba(22,34,58,.04), transparent 35%);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-<section>
-<h4>Education</h4>
-<ul>
-<li>American River College
-<ul>
-    <li>Associate of Science (AS) in Business Administration.</li>
-    <li>Graduated with High Honors </li>
-</ul>
-</li>
-<li>San Diego State University
-<ul>
-    <li>Pursuing Bachelors of Science in Business Administration</li>
-        <li> with an emphasis in Real Estate Finance </li>
-</ul>
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .025;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 
-</li>
-</ul>
-</section>
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
 
-<section>
-<h4>Experience</h4>
+  a { color: var(--copper-deep); text-decoration: none; }
 
-<table bgcolor="black" width="400">
-<tr bgcolor="grey">
+  header.topbar {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(10px);
+    background: rgba(251,249,244,.82);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.05rem; letter-spacing: .2px; }
+  .brand .dot { color: var(--copper); }
+  nav.links { display: flex; gap: 26px; }
+  nav.links a {
+    color: var(--ink-soft); font-size: .82rem; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase; transition: color .2s;
+  }
+  nav.links a:hover { color: var(--copper-deep); }
+  @media (max-width: 680px) { nav.links { display: none; } }
 
- <th width="100">Insurance Company</th> 
-    <th width="100">American River College Library</th>  
-   <th width="100"> Moss Adams</th> 
-      <th width="100"> Sacramento Entrepreneurship Academy </th> 
+  .hero { padding: 88px 0 64px; }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; align-items: center;
+  }
+  .eyebrow {
+    font-size: .78rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--copper-deep); margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif; font-weight: 600; line-height: 1.02;
+    font-size: clamp(2.6rem, 6vw, 4.2rem); letter-spacing: -.02em; color: var(--ink);
+  }
+  .hero .school { font-size: 1.05rem; color: var(--ink-soft); margin-top: 14px; font-weight: 600; }
+  .hero .lead { margin-top: 24px; font-size: 1.06rem; color: var(--ink-soft); max-width: 46ch; }
+  .hero .lead b { color: var(--ink); }
 
-</tr>
-<tr bgcolor="lightgrey" align="center">
+  .portrait {
+    position: relative; aspect-ratio: 1/1; width: 100%; max-width: 300px; margin-left: auto;
+  }
+  .portrait::after {
+    content: ""; position: absolute; inset: 14px -14px -14px 14px;
+    border: 1.5px solid var(--copper); border-radius: 50%; z-index: 0;
+  }
+  .portrait img, .portrait .placeholder {
+    position: relative; z-index: 1; width: 100%; height: 100%;
+    border-radius: 50%; object-fit: cover;
+    box-shadow: var(--shadow); background: var(--paper-2);
+  }
+  .portrait .placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 24px; border: 2px dashed var(--line); color: var(--ink-soft);
+  }
+  .portrait .placeholder span:first-child { font-size: 2rem; margin-bottom: 8px; }
+  .portrait .placeholder span:last-child { font-size: .78rem; line-height: 1.4; }
 
-    <td>Financial Services Representative</td>
-    <td>Help Desk Assistant</td>
-    <td>Intern</td>
-    <td>Corhort Fellow</td>
+  section.block { padding: 52px 0; border-top: 1px solid var(--line); }
+  .section-label {
+    font-size: .78rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--copper-deep); margin-bottom: 28px; display: flex; align-items: center; gap: 14px;
+  }
+  .section-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  h2.heading {
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+    letter-spacing: -.01em; margin-bottom: 8px;
+  }
 
-     <p>These experiences have allowed me to gain skills in Customer Service, Business Strategy, Finance, Sales, and Marketing that I can apply to any business to help grow.</p>
+  .meta-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 8px; }
+  @media (max-width: 680px) { .meta-grid { grid-template-columns: 1fr; } }
+  .meta-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px 24px; box-shadow: var(--shadow);
+  }
+  .meta-card h3 {
+    font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--copper-deep); margin-bottom: 10px;
+  }
+  .meta-card p { color: var(--ink-soft); font-size: .98rem; }
+  .interest-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .interest-tags span {
+    font-size: .82rem; font-weight: 600; color: var(--ink);
+    background: var(--paper-2); border: 1px solid var(--line);
+    padding: 5px 12px; border-radius: 999px;
+  }
 
+  .timeline { list-style: none; counter-reset: step; margin-top: 6px; }
+  .timeline li {
+    counter-increment: step; position: relative; padding: 0 0 22px 56px;
+  }
+  .timeline li::before {
+    content: counter(step); position: absolute; left: 0; top: -2px;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--ink); color: var(--paper);
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: .95rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .timeline li:not(:last-child)::after {
+    content: ""; position: absolute; left: 17.5px; top: 36px; bottom: 0; width: 1.5px; background: var(--line);
+  }
+  .timeline li strong { font-size: 1.05rem; font-weight: 600; color: var(--ink); }
 
-</tr>
+  .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .skills span {
+    font-size: .92rem; font-weight: 600; color: var(--ink);
+    background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow);
+    padding: 9px 16px; border-radius: 10px; transition: transform .2s, border-color .2s;
+  }
+  .skills span:hover { transform: translateY(-2px); border-color: var(--copper); }
 
-</table>
-</section>
+  .edu-item { border-left: 2px solid var(--copper); padding: 4px 0 4px 22px; margin-bottom: 26px; }
+  .edu-item h3 { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 6px; }
+  .edu-item ul { list-style: none; }
+  .edu-item li { color: var(--ink-soft); font-size: .98rem; padding-left: 18px; position: relative; }
+  .edu-item li::before { content: "—"; position: absolute; left: 0; color: var(--copper); }
 
-<section>
-<h5>Contact me at</h5>
-<a href="mailto:taviontd@gmail.com">Email Me</a>
-    
-<h5>Connect with me on LinkedIn</h5>
-    <a href="https://www.linkedin.com/in/tavionthomasdominguez">LinkedIn</a>
-</section>
+  .exp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-bottom: 28px; }
+  @media (max-width: 680px) { .exp-grid { grid-template-columns: 1fr; } }
+  .exp-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 24px; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s;
+  }
+  .exp-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(22,34,58,.12); }
+  .exp-card .company { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 4px; }
+  .exp-card .role { font-size: .9rem; font-weight: 600; color: var(--copper-deep); letter-spacing: .02em; }
+  .exp-summary { color: var(--ink-soft); font-size: 1.02rem; max-width: 70ch; }
 
-<h2>Portfolio</h2>
-<p>Click a preview below to request access to view the full document (hosted on Google Drive).</p>
+  .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 8px; }
+  @media (max-width: 820px) { .portfolio-grid { grid-template-columns: 1fr; max-width: 380px; } }
+  .portfolio-grid a {
+    display: block; background: var(--card); border: 1px solid var(--line);
+    border-radius: 14px; overflow: hidden; box-shadow: var(--shadow);
+    transition: transform .25s, box-shadow .25s; color: var(--ink);
+  }
+  .portfolio-grid a:hover { transform: translateY(-5px); box-shadow: 0 20px 44px rgba(22,34,58,.14); }
+  .portfolio-grid img { width: 100%; height: 200px; object-fit: cover; display: block; background: var(--paper-2); border-bottom: 1px solid var(--line); }
+  .portfolio-grid p { padding: 14px 18px 0; font-weight: 600; font-size: .98rem; }
+  .portfolio-grid p + p { padding-top: 4px; padding-bottom: 18px; font-weight: 400; font-size: .9rem; color: var(--ink-soft); }
+  .portfolio-grid a > p:last-child { padding-bottom: 18px; }
+  .portfolio-note { color: var(--ink-soft); margin-bottom: 26px; }
 
-<div class="portfolio-grid">
-  <a href="https://drive.google.com/file/d/1rnoZAhEuA_lQ2soJ5jUlI83ttlciHqDS/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="Financial Services Business Plan.png" alt="Financial Services Business Plan 1" width="250">
-    <p>Financial Services Business Plan I Created</p>
-  </a>
+  footer.contact { border-top: 1px solid var(--line); padding: 64px 0 72px; text-align: center; }
+  footer .cta-label { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; margin-bottom: 28px; }
+  .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .98rem;
+    padding: 13px 26px; border-radius: 999px; transition: transform .2s, background .2s;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--copper-deep); transform: translateY(-2px); }
+  .btn-ghost { border: 1.5px solid var(--ink); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--copper-deep); color: var(--copper-deep); transform: translateY(-2px); }
 
-  <a href="https://drive.google.com/file/d/1CepXGZx-KOsDd9b9I5CvK2HFYjaHZp59/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="Property Partners Business Plan.png" alt="Business Plan 2 Preview" width="250">
-    <p>Property Management Startup Business Plan</p>
-  </a>
+  .reveal { opacity: 0; transform: translateY(16px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  .d1 { animation-delay: .05s; } .d2 { animation-delay: .15s; }
+  .d3 { animation-delay: .25s; } .d4 { animation-delay: .35s; }
 
-  <a href="https://drive.google.com/file/d/1fAmiJvkmneTh_ph7lpMASayb04KO2g4L/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="Property Partners Pitch Deck.png" alt="Pitch Deck Preview" width="250">
-    <p>Property Partners Pitch Deck – Investor Presentation </p>
-    <p>Property Partners is a property management startup I cofounded with two others.</p>
+  @media (max-width: 820px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+    .portrait { margin: 0 auto; order: -1; }
+  }
+</style>
+</head>
+<body>
 
-  </a>
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">Tavion Thomas-Dominguez<span class="dot">.</span></div>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="reveal d1">
+        <div class="eyebrow">Business &middot; Finance &middot; Real Estate</div>
+        <h1>Tavion<br>Thomas-Dominguez</h1>
+        <div class="school">San Diego State University</div>
+        <p class="lead"><b>Hi</b>, my name is Tavion Thomas-Dominguez and I am currently a fourth-year student at San Diego State University majoring in business.</p>
+      </div>
+
+      <div class="portrait reveal d2">
+        <!-- HEADSHOT: replace headshot.jpg with your photo file (keep it in the same folder).
+             If the file isn't found, the dashed placeholder below is shown instead. -->
+        <img src="headshot.jpg" alt="Tavion Thomas-Dominguez"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="placeholder" style="display:none;">
+          <span>📷</span>
+          <span>Save your photo as<br><strong>headshot.jpg</strong><br>in this folder</span>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
+
+<div class="wrap">
+  <section class="block reveal" id="about">
+    <div class="section-label">About</div>
+    <h2 class="heading">A bit about me</h2>
+    <div class="meta-grid">
+      <div class="meta-card">
+        <h3>Hometown</h3>
+        <p>I am from Sacramento, California.</p>
+      </div>
+      <div class="meta-card">
+        <h3>Outside of work</h3>
+        <p>Some of my hobbies include reading, going on hikes, and enjoying time with friends.</p>
+      </div>
+      <div class="meta-card" style="grid-column: 1 / -1;">
+        <h3>Goals</h3>
+        <p>Becoming a consultant and having a career in finance. I am interested in:</p>
+        <div class="interest-tags">
+          <span>Tax</span>
+          <span>Wealth Management</span>
+          <span>Consulting</span>
+          <span>Analyst Careers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="block reveal" id="ventures">
+    <div class="section-label">Ventures &amp; Skills</div>
+    <div class="meta-grid">
+      <div>
+        <h2 class="heading" style="font-size:1.5rem; margin-bottom:24px;">Businesses I started, in order</h2>
+        <ol class="timeline">
+          <li><strong>Selling candy in middle school</strong></li>
+          <li><strong>Cutting hair</strong></li>
+          <li><strong>Insurance business</strong></li>
+          <li><strong>Property Management startup</strong></li>
+        </ol>
+      </div>
+      <div>
+        <h2 class="heading" style="font-size:1.5rem; margin-bottom:24px;">Some skills of mine</h2>
+        <div class="skills">
+          <span>Marketing</span>
+          <span>Investing &amp; Financial Analysis</span>
+          <span>Sales</span>
+          <span>Business Strategy</span>
+          <span>Great Communication</span>
+          <span>Customer Service</span>
+          <span>Self-starter</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="block reveal" id="experience">
+    <div class="section-label">Experience</div>
+    <h2 class="heading" style="margin-bottom:28px;">Where I've worked</h2>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="company">Primerica</div>
+        <div class="role">Financial Services Representative</div>
+      </div>
+      <div class="exp-card">
+        <div class="company">American River College Library</div>
+        <div class="role">Help Desk Assistant</div>
+      </div>
+      <div class="exp-card">
+        <div class="company">Moss Adams</div>
+        <div class="role">Intern</div>
+      </div>
+      <div class="exp-card">
+        <div class="company">Sacramento Entrepreneurship Academy</div>
+        <div class="role">Cohort Fellow</div>
+      </div>
+    </div>
+    <p class="exp-summary">These experiences have allowed me to develop client-facing and analytical skills in financial services and accounting, along with sales and business strategy, that I can apply to help any business grow.</p>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="block reveal" id="education">
+    <div class="section-label">Education</div>
+    <h2 class="heading" style="margin-bottom:28px;">Academic background</h2>
+    <div class="edu-item">
+      <h3>American River College</h3>
+      <ul>
+        <li>Associate of Science (AS) in Business Administration</li>
+        <li>Graduated with High Honors</li>
+      </ul>
+    </div>
+    <div class="edu-item">
+      <h3>San Diego State University</h3>
+      <ul>
+        <li>Pursuing Bachelor of Science in Business Administration</li>
+        <li>Emphasis in Real Estate Finance</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="block reveal" id="portfolio">
+    <div class="section-label">Portfolio</div>
+    <h2 class="heading">Selected work</h2>
+    <p class="portfolio-note">Click a preview below to request access to view the full document (hosted on Google Drive).</p>
+    <div class="portfolio-grid">
+      <a href="https://drive.google.com/file/d/1rnoZAhEuA_lQ2soJ5jUlI83ttlciHqDS/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <img src="Financial Services Business Plan.png" alt="Financial Services Business Plan 1" width="250">
+        <p>Financial Services Business Plan I Created</p>
+      </a>
+      <a href="https://drive.google.com/file/d/1CepXGZx-KOsDd9b9I5CvK2HFYjaHZp59/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <img src="Property Partners Business Plan.png" alt="Business Plan 2 Preview" width="250">
+        <p>Property Management Startup Business Plan</p>
+      </a>
+      <a href="https://drive.google.com/file/d/1fAmiJvkmneTh_ph7lpMASayb04KO2g4L/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <img src="Property Partners Pitch Deck.png" alt="Pitch Deck Preview" width="250">
+        <p>Property Partners Pitch Deck – Investor Presentation</p>
+        <p>Property Partners is a property management startup I cofounded with two others.</p>
+      </a>
+    </div>
+  </section>
+</div>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <div class="cta-label">Let's connect</div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:taviontd@gmail.com">Email Me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/tavionthomasdominguez" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
